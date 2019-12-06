@@ -9,6 +9,8 @@ GO_BUILD_CMD=$(GO_FLAGS) go build $(GO_LDFLAGS)
 BINARY_NAME=limes
 BUILD_DIR=build
 
+.PHONY: docker
+
 all: clean generate-all lint test build-all
 
 lint:
@@ -38,3 +40,17 @@ build build-all: build-linux build-osx
 clean:
 	@echo "Cleaning..."
 	@rm -Rf $(BUILD_DIR)
+
+docker:
+# Build a new image (delete old one)
+	docker build --force-rm --build-arg GOPROXY -t $(BINARY_NAME) .
+
+build-in-docker: docker
+# Force-stop any containers with this name
+	docker rm -f $(BINARY_NAME) || true
+# Create a new container with newly built image (but don't run it)
+	docker create --name $(BINARY_NAME) $(BINARY_NAME)
+# Copy over the binary to disk (from container)
+	docker cp '$(BINARY_NAME):/opt/' $(BUILD_DIR)
+# House-keeping: removing container
+	docker rm -f $(BINARY_NAME)
