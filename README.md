@@ -1,5 +1,5 @@
 # Limes
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexejk%2Flimes.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexejk%2Flimes?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B14789%2Flimes.svg?type=shield)](https://app.fossa.com/projects/custom%2B14789%2Flimes?ref=badge_shield)
 
 Limes provides an easy work flow with MFA protected access keys, temporary credentials and access to multiple roles/accounts.
 
@@ -123,4 +123,4 @@ go generate
 
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexejk%2Flimes.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexejk%2Flimes?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B14789%2Flimes.svg?type=large)](https://app.fossa.com/projects/custom%2B14789%2Flimes?ref=badge_large)
