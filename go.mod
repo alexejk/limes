@@ -1,4 +1,4 @@
-module github.com/otm/limes
+module github.com/alexejk/limes
 
 go 1.13
 
@@ -6,6 +6,7 @@ require (
 	github.com/aws/aws-sdk-go v1.25.48
 	github.com/bobziuchkovski/writ v0.8.9
 	github.com/golang/protobuf v1.3.2
+	github.com/stretchr/testify v1.4.0 // indirect
 	golang.org/x/net v0.0.0-20191206103017-1ddd1de85cb0
 	golang.org/x/sys v0.0.0-20191204072324-ce4227a45e2e // indirect
 	golang.org/x/text v0.3.2 // indirect
