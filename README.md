@@ -1,4 +1,6 @@
 # Limes
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexejk%2Flimes.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexejk%2Flimes?ref=badge_shield)
+
 Limes provides an easy work flow with MFA protected access keys, temporary credentials and access to multiple roles/accounts.
 
 Limes is the Local Instance MEtadata Service and emulates parts of the [AWS Instance Metadata Service](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) running on Amazon Linux. The AWS SDK and AWS CLI can therefor utilize this service to authenticate.
@@ -118,3 +120,7 @@ If protobuf definitions are updated `protoc` is needed on the system. Installati
 go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 go generate
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falexejk%2Flimes.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falexejk%2Flimes?ref=badge_large)
