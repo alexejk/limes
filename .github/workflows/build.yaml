@@ -1,0 +1,21 @@
+name: Build in Docker
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: "Make: Build in Docker"
+      run: |
+        make build-in-docker
+      
