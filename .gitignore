@@ -3,3 +3,8 @@ ims.conf
 limes
 limes_*
 .vscode
+.idea/
+*.pb.go
+
+build/
+
