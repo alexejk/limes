@@ -1,5 +1,7 @@
 # Limes
 
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B14789%2Flimes.svg?type=shield)](https://app.fossa.com/projects/custom%2B14789%2Flimes?ref=badge_shield)
+
 Limes provides an easy work flow with MFA protected access keys, temporary credentials and access to multiple roles/accounts.
 
 Limes is the Local Instance MEtadata Service and emulates parts of the [AWS Instance Metadata Service](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) running on Amazon Linux. The AWS SDK and AWS CLI can therefor utilize this service to authenticate.
@@ -108,3 +110,7 @@ Building with docker:
 ```shell
 make build-in-docker
 ```
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B14789%2Flimes.svg?type=large)](https://app.fossa.com/projects/custom%2B14789%2Flimes?ref=badge_large)
