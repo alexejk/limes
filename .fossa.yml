@@ -1,0 +1,11 @@
+version: 2
+cli:
+  server: https://app.fossa.com
+  fetcher: custom
+  project: git@github.com:alexejk/limes.git
+analyze:
+  modules:
+  - name: limes
+    type: go
+    target: github.com/alexejk/limes
+    path: .
