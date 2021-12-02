@@ -46,6 +46,7 @@ build build-all: build-linux build-osx
 package-linux:
 	@echo "Packaging Linux binary..."
 	tar -C $(BUILD_DIR) -zcf $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-linux-amd64.tar.gz $(BINARY_NAME)-linux-amd64
+	tar -C $(BUILD_DIR) -zcf $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-linux-arm64.tar.gz $(BINARY_NAME)-linux-arm64
 
 .PHONY: package-osx
 package-osx:
