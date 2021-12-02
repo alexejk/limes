@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option objc_class_prefix = "IMS";
+option go_package = "github.com/alexejk/limes/proto";
 
 package ims;
 

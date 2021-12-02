@@ -27,7 +27,7 @@ const (
 	profileDefault   = "default"
 )
 
-//go:generate protoc -I proto/ proto/ims.proto --go_out=plugins=grpc:proto
+//go:generate protoc -I proto/ proto/ims.proto --go_out=proto --go_opt=paths=source_relative --go-grpc_out=proto --go-grpc_opt=paths=source_relative
 
 // add "port" to configuration file
 // rewrite .aws/config to match current profile

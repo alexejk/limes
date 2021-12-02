@@ -7,8 +7,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	pb "github.com/alexejk/limes/proto"
 	"golang.org/x/net/context"
+
+	pb "github.com/alexejk/limes/proto"
 )
 
 var grpcErrorf = grpc.Errorf
@@ -20,6 +21,7 @@ type CliHandler struct {
 	log          Logger
 	config       Config
 	credsManager CredentialsManager
+	pb.UnimplementedInstanceMetaServiceServer
 }
 
 // NewCliHandler returns a cliHandler

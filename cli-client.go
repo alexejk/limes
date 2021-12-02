@@ -15,10 +15,11 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	pb "github.com/alexejk/limes/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
+
+	pb "github.com/alexejk/limes/proto"
 )
 
 type awsEnv struct {
@@ -130,7 +131,7 @@ func StartService(configFile, address, profileName, MFA string, port int, fake b
 	}
 
 	// Wait for a graceful shutdown signal
-	terminate := make(chan os.Signal)
+	terminate := make(chan os.Signal, 1)
 	signal.Notify(terminate, syscall.SIGINT, syscall.SIGTERM)
 
 	log.Info("Service: online\n")

@@ -32,9 +32,11 @@ pre-build:
 build-linux: pre-build
 	@echo "Building Linux binary..."
 	GOOS=linux GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-linux-amd64
+	GOOS=linux GOARCH=arm64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-linux-arm64
 build-osx: pre-build
 	@echo "Building OSX binary..."
 	GOOS=darwin GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-amd64
+	GOOS=darwin GOARCH=arm64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-arm64
 build build-all: build-linux build-osx
 
 clean:
