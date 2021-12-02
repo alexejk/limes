@@ -9,9 +9,12 @@ GO_BUILD_CMD=$(GO_FLAGS) go build $(GO_LDFLAGS)
 BINARY_NAME=limes
 BUILD_DIR=build
 
+APP_VERSION=$(shell hack/version.sh)
+
+
 .PHONY: docker
 
-all: clean generate-all lint test build-all
+all: clean generate-all lint test build-all package-all
 
 lint:
 	@echo "Linting code..."
@@ -38,6 +41,20 @@ build-osx: pre-build
 	GOOS=darwin GOARCH=amd64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-amd64
 	GOOS=darwin GOARCH=arm64 $(GO_BUILD_CMD) -o $(BUILD_DIR)/$(BINARY_NAME)-darwin-arm64
 build build-all: build-linux build-osx
+
+.PHONY: package-linux
+package-linux:
+	@echo "Packaging Linux binary..."
+	tar -C $(BUILD_DIR) -zcf $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-linux-amd64.tar.gz $(BINARY_NAME)-linux-amd64
+
+.PHONY: package-osx
+package-osx:
+	@echo "Packaging OSX binaries..."
+	tar -C $(BUILD_DIR) -zcf $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-darwin-amd64.tar.gz $(BINARY_NAME)-darwin-amd64
+	tar -C $(BUILD_DIR) -zcf $(BUILD_DIR)/$(BINARY_NAME)-$(APP_VERSION)-darwin-arm64.tar.gz $(BINARY_NAME)-darwin-arm64
+
+.PHONY: package-all
+package-all: package-linux package-osx
 
 clean:
 	@echo "Cleaning..."
