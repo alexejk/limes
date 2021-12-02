@@ -1,8 +1,9 @@
-FROM golang:1.13-alpine
+FROM golang:1.17-alpine
 
 # Build dependencies
 RUN apk --no-cache add alpine-sdk protobuf
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1
+RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1.0
 
 WORKDIR /src
 
