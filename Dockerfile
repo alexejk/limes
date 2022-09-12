@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.19.1-alpine
 
 # Build dependencies
 RUN apk --no-cache add alpine-sdk protobuf
